@@ -20,8 +20,10 @@ class Solution
   {
     cout << endl << "Original: " << arrayStringify(arr) << endl;
     int n = arr.size();
+
     for (size_t i = 0; i < n; ++i)
     {
+      bool changed = false;
       for (size_t j = 1; j < n; ++j)
       {
         if (arr.at(j) < arr.at(j - 1))
@@ -29,8 +31,10 @@ class Solution
           T temp = arr.at(j);
           arr[j] = arr.at(j - 1);
           arr[j - 1] = temp;
+          changed = true;
         }
       }
+      if (!changed) break;
     }
     cout << "Sorted: " << arrayStringify(arr) << endl << endl;
   }
