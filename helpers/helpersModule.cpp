@@ -1,7 +1,9 @@
+#ifndef HELPERSMODULE_H
+#define HELPERSMODULE_H
+#include "helpersModule.h"
+
 #include <iostream>
 #include <vector>
-
-#include "helpersModule.h"
 
 using namespace std;
 
@@ -27,3 +29,4 @@ string arrayStringify(vector<T> arr)
 
   return res;
 }
+#endif
