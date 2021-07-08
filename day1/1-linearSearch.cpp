@@ -1,15 +1,18 @@
 /**
  * Day 1: Linear Search
+ * 
+ * Time complexity: O(n)
  */
 
 #include <iostream>
 #include <vector>
+#include "../helpers/Helpers.h"
 
 using namespace std;
 
 class Solution
 {
- public:
+public:
   void solve(vector<int> arr, int target)
   {
     for (size_t i = 0, n = arr.size(); i < n; ++i)
@@ -29,8 +32,8 @@ int main(void)
 {
   Solution solution = Solution();
 
-  const vector<int> arr1 = {1, 3, 5, 7, 9};
-  const vector<int> arr2 = {29, 84, 49, 61, 33};
+  vector<int> arr1 = {1, 3, 5, 7, 9};
+  vector<int> arr2 = {29, 84, 49, 61, 33};
   solution.solve(arr1, 4);
   solution.solve(arr2, 61);
   return 0;
