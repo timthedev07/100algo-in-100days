@@ -9,6 +9,7 @@ using namespace std;
 
 template <typename T>
 string arrayStringify(vector<T> arr);
+string arrayStringify(vector<double> arr);
 
 template <typename T>
 vector<T> sliceArray(vector<T> arr, size_t start, size_t end);
