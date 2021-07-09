@@ -48,4 +48,18 @@ string arrayStringify(vector<double> arr)
   res.append(" ]");
 
   return res;
+};
+
+template <typename T>
+vector<T> sliceArray(vector<T> arr, size_t start, size_t end)
+{
+  vector<T> res = vector<T>(arr.begin() + start, arr.begin() + (end - start));
+  return res;
+}
+
+template <typename T>
+vector<T> sliceArray(vector<T> arr, size_t start)
+{
+  vector<T> res = vector<T>(arr.begin() + start, arr.end());
+  return res;
 }
