@@ -47,48 +47,16 @@ int main(void)
 {
   Solution solution = Solution();
   const vector<string> arr0 = {"apollo", "patreon", "hello", "typescript"};
-  const vector<string> arr1 = {"somewhere",
-                               "influence",
-                               "about",
-                               "announced",
-                               "fresh",
-                               "compound"
-                               "cloth",
-                               "tie",
-                               "sucks",
-                               "twice",
-                               "major",
-                               "phrase"
-                               "cause",
-                               "public",
-                               "lucky",
-                               "planned",
-                               "essential",
-                               "quarter"
-                               "chapter",
-                               "money",
-                               "animal",
-                               "with",
-                               "equally",
-                               "refer"
-                               "verb",
-                               "tonight",
-                               "shape",
-                               "cause",
-                               "putting",
-                               "widely"
-                               "cave",
-                               "gather",
-                               "dry",
-                               "shout",
-                               "wonderful",
-                               "speed"
-                               "each",
-                               "comfortable",
-                               "list",
-                               "opinion",
-                               "dropped",
-                               "bark"};
+  const vector<string> arr1 = {
+      "somewhere", "influence", "about",       "announced", "fresh",
+      "compound",  "cloth",     "tie",         "sucks",     "twice",
+      "major",     "phrase",    "cause",       "public",    "lucky",
+      "planned",   "essential", "quarter",     "chapter",   "money",
+      "animal",    "with",      "equally",     "refer",     "verb",
+      "tonight",   "shape",     "cause",       "putting",   "widely",
+      "cave",      "gather",    "dry",         "shout",     "wonderful",
+      "speed",     "each",      "comfortable", "list",      "opinion",
+      "dropped",   "bark"};
   const vector<double> arr2 = {3.4, 1.9, 54.8, 30.6, 77.55};
   solution.solve(arr0);
   solution.solve(arr1);
