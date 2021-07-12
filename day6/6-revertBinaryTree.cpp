@@ -1,10 +1,6 @@
 /**
- * Day 6 - Find the number of components
+ * Day 6 - Invert a binary tree
  *
- * Question:
- *
- * Given a 2d matrix, find the number of connected components in an undirected
- * graph using Depth First Search
  */
 #include <iostream>
 #include <vector>
