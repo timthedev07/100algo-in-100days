@@ -17,7 +17,7 @@ string arrayStringify(vector<T> arr)
 
   for (size_t i = 0, n = arr.size(); i < n; ++i)
   {
-    res.append(arr.at(i));
+    res.append(to_string(arr.at(i)));
     if (i != n - 1)
     {
       res.append(", ");
@@ -28,8 +28,8 @@ string arrayStringify(vector<T> arr)
   return res;
 }
 
-// numeric type overload
-string arrayStringify(vector<double> arr)
+// string overload
+string arrayStringify(vector<string> arr)
 {
   if (arr.empty())
   {
@@ -39,7 +39,7 @@ string arrayStringify(vector<double> arr)
 
   for (size_t i = 0, n = arr.size(); i < n; ++i)
   {
-    res.append(to_string(arr.at(i)));
+    res.append("\"" + (arr.at(i)) + "\"");
     if (i != n - 1)
     {
       res.append(", ");
