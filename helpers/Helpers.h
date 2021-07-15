@@ -15,5 +15,4 @@ template <typename T>
 vector<T> sliceArray(vector<T> arr, size_t start, size_t end);
 template <typename T>
 vector<T> sliceArray(vector<T> arr, size_t start);
-
 #endif
