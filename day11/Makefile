@@ -1,0 +1,1 @@
+main: ; g++ ./11-reverseArray.cpp -o ./11-reverseArray.out --std=c++11
