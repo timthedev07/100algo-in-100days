@@ -1,0 +1,1 @@
+main: ; g++ ./14-sumDigits.cpp -o 14-sumDigits.out --std=c++11
