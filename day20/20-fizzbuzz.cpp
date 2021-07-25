@@ -1,5 +1,5 @@
 /**
- * Day 19 - Convert an array to reduced form
+ * Day 20 - FizzBuzz
  *
  * Time complexity: O(1) literally
  *
@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution
 {
-public:
+ public:
   void solve()
   {
     const string fizzbuzz =
