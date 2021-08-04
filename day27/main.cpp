@@ -18,10 +18,10 @@ class Solution
 
     for (int i = 0; i < nums.size(); ++i)
     {
-      int compliment = target - nums[i];
-      if (hashmap.find(compliment) != hashmap.end())
+      int complement = target - nums[i];
+      if (hashmap.find(complement) != hashmap.end())
       {
-        vector<int> res = {i, hashmap[compliment]};
+        vector<int> res = {i, hashmap[complement]};
         return res;
       }
       hashmap.insert(pair<int, int>(nums[i], i));
