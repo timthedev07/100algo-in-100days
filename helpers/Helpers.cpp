@@ -63,3 +63,28 @@ vector<T> sliceArray(vector<T> arr, size_t start)
   vector<T> res = vector<T>(arr.begin() + start, arr.end());
   return res;
 }
+
+template <typename T>
+string matrixStringify(vector<vector<T>> mat)
+{
+  string res = "[\n";
+
+  for (vector<T> row : mat)
+  {
+    res += ("  " + arrayStringify(row) + ",\n");
+  }
+
+  return res + "]";
+}
+
+string matrixStringify(vector<vector<string>> mat)
+{
+  string res = "[\n";
+
+  for (vector<string> row : mat)
+  {
+    res += ("  " + arrayStringify(row) + ",\n");
+  }
+
+  return res + "]";
+}

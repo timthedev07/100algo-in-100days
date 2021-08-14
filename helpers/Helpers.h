@@ -12,6 +12,10 @@ string arrayStringify(vector<T> arr);
 string arrayStringify(vector<string> arr);
 
 template <typename T>
+string matrixStringify(vector<vector<T>> mat);
+string matrixStringify(vector<vector<string>> mat);
+
+template <typename T>
 vector<T> sliceArray(vector<T> arr, size_t start, size_t end);
 template <typename T>
 vector<T> sliceArray(vector<T> arr, size_t start);
