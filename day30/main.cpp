@@ -1,75 +1,35 @@
 /**
- * Day 29 - Path sum II (LeetCode)
- *
- * Given the root of a binary tree and an integer targetSum.
- * Return all root-to-leaf paths where each path's sum equals targetSum.
- * A leaf is a node with no children.
+ * Day 29 - firstNotRepeatingCharacter (codesignal)
+ * Given a string s consisting of small English letters
+ * find and return the first instance of a non-repeating character in it. If
+ * there is no such character, return '_'.
  */
 #include <iostream>
-#include <vector>
+#include <unordered_map>
 
 using namespace std;
-
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left),
- * right(right) {}
- * };
- */
-
-struct TreeNode
-{
-  int val;
-  TreeNode *left;
-  TreeNode *right;
-  TreeNode() : val(0), left(nullptr), right(nullptr) {}
-  TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode *left, TreeNode *right)
-      : val(x), left(left), right(right)
-  {
-  }
-};
 
 class Solution
 {
  public:
-  bool hasPathSum(TreeNode *root, int target)
+  char firstNotRepeatingCharacter(string s)
   {
-    if (root != nullptr)
+    unordered_map<char, int> map;
+
+    for (const char &c : s)
     {
-      target -= root->val;
-      if (target == 0 && root->left == nullptr && root->right == nullptr)
-      {
-        return true;
-      }
+      if (map.count(c))
+        map[c] = 0;
       else
-      {
-        bool res = false;
-        if (root->right != nullptr)
-        {
-          res = hasPathSum(root->right, target);
-        }
-        if (res)
-        {
-          return true;
-        }
-        if (root->left != nullptr)
-        {
-          res = hasPathSum(root->left, target);
-        }
-        if (res)
-        {
-          return true;
-        }
-      }
+        map[c]++;
     }
-    return false;
+
+    for (const char &c : s)
+    {
+      if (map[c] == 1) return c;
+    }
+
+    return '_';
   }
 };
 int main(void) {}
