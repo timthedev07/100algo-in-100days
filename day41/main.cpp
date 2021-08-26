@@ -11,6 +11,7 @@
  is 1 instead of 0.
  */
 #include <iostream>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
@@ -18,44 +19,33 @@ using namespace std;
 class Solution
 {
  public:
-  vector<int> findLongestSubarrayBySum(int target, vector<int> arr)
+  bool sumOfTwo(vector<int> a, vector<int> b, int target)
   {
-    if (arr.empty()) return {-1};
+    unordered_set<int> setB;
 
-    int a = 0, b = 0;
-    int n = arr.size();
-    int sum = 0;
-    vector<int> res = {-1};
-
-    while (b < n)
+    for (const int &i : b)
     {
-      sum += arr[b];
-
-      // while the sum is greater than the target sum and the two pointers have
-      // not yet met
-      while (a < b && sum > target)
-      {
-        // pop items off on the left side
-        sum -= arr[a++];
-      }
-
-      // if the current contiguous subarray's elements sum to target,
-      // and it's better than the previous subarray
-      if (sum == target && (res.size() == 1 || res[1] - res[0] < b - a))
-      {
-        // update result
-        res = {a + 1, b + 1};
-      }
-
-      b++;
+      setB.insert(i);
     }
 
-    return res;
+    for (int i = 0, n = a.size(); i < n; ++i)
+    {
+      int complement = target - a[i];
+
+      if (setB.count(complement) > 0) return true;
+    }
+    return false;
   }
 };
 
 int main(void)
 {
   Solution solution = Solution();
-  vector<int> a = {1, 2, 3, 4};
+  vector<int> a = {1, 2, 3};
+  vector<int> b = {10, 20, 30, 40};
+  vector<int> a1 = {1, 2, 3};
+  vector<int> b1 = {10, 20, 30, 40};
+
+  cout << (solution.sumOfTwo(a, b, 42) ? "true" : "false") << '\n';
+  cout << (solution.sumOfTwo(a, b, 50) ? "true" : "false");
 }
