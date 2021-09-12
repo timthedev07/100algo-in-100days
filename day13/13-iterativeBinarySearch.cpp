@@ -1,9 +1,9 @@
 /**
  * Day 13 - Iterative binary search
- * 
+ *
  * Time complexity: O(log n)
  * But, it has a space complexity of O(1) because it is iterative.
- * 
+ *
  * Sorry I didn't have that much time.
  */
 #include <iostream>
@@ -14,27 +14,21 @@ using namespace std;
 template <typename T>
 int binSearch(vector<T> arr, T target, int low, int high)
 {
-  int mid = 0;
-  while (high > low)
+  while (low < high)
   {
-    mid = ceil((high + low) / 2);
-
-    if (arr[mid] == target)
-    {
-      return mid;
-    }
+    int mid = low + ((high - low) / 2);
 
     if (target <= arr[mid])
     {
       high = mid;
     }
-    else if (target > arr[mid])
+    else
     {
       low = mid + 1;
     }
   }
 
-  if (arr[low] == target)
+  if (low == high && arr[low] == target)
   {
     return low;
   }
